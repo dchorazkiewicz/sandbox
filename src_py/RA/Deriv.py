@@ -36,6 +36,12 @@ class My_lambda(Diff_fun):
 if __name__ == "__main__":
 
     f=My_lambda(lambda x: x**3)
+    print(type(f))
     print(f'Function value:%g' % f(1))
     print(f'Derivative value: %g' % f.df(1))
     print(f'Second derivative value: %g' % f.ddf(1))
+    # stack operations
+    ff = My_lambda(f)
+    print(f'Function value:%g' % ff(1))
+    print(f'Derivative value: %g' % ff.df(1))
+    print(f'Second derivative value: %g' % ff.ddf(1))

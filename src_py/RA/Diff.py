@@ -50,6 +50,7 @@ class Diff2(Diff):
             df_numerical = self(x)
             df_exact = self.exact(x)
         return df_exact - df_numerical
+        
 class Forward1(Diff2):
     def __call__(self, x):
         f, h = self.f, self.h
