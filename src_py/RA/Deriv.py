@@ -6,7 +6,7 @@ class Diff_fun(object):
         self.h = h # spacing for numerical derivatives
 
     def __call__(self, x):
-        raise NotImplementedErrors
+        raise NotImplementedError
 
     def df(self, x):
         """Return the 1st derivative of self.f."""
