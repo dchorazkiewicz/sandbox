@@ -43,15 +43,16 @@ class PoissonJumper(object):
 if __name__ == "__main__":
     print("..:: Test PoissonJumper ::..")
 
-    PJ = PoissonJumper(lambda t, x: t/(10+t)+1, 0., 10.)
-    print(PJ.position[-1])
-    print(PJ(1,1))
-    print(f'Homo jump: {PJ.get_homo_jump()}')
-    print(f'Example integral: {PJ.get_integral(t=10,t0=2,x0=1)}')
-    print(20*'~')
-    print(PJ.get_inverse(8,0,0))
-    for i in range(10):
+    PJ = PoissonJumper(lambda t, x: 1/10, 0., 10.)
+    # print(PJ.position[-1])
+    # print(PJ(1,1))
+    # print(f'Homo jump: {PJ.get_homo_jump()}')
+    # print(f'Example integral: {PJ.get_integral(t=10,t0=2,x0=1)}')
+    # print(20*'~')
+    # print(PJ.get_inverse(8,0,0))
+    for i in range(1000):
         PJ.jump()
     x=PJ.position[:,0]
     y=(x[1:]-x[:-1])
-    plt.scatter(np.arange(len(y)),np.cumsum(y))
+    print(f'Mean -- {np.mean(y)}')
+    # plt.step(np.cumsum(y),np.arange(len(y)))
